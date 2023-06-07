@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Player Test</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<input type="file">
+<video controls width="800" height="600"></video>
+
+<script>
+$('input').on('change', event => {
+    const file = event.target.files[0];
+    const url = URL.createObjectURL(file);
+
+    $('video').attr('src', url);
+});
+</script>
+</body>
+</html>
